@@ -3,6 +3,6 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
-#define PS1 "%s >> "
+#define PS1 "%s >> TESTETESTESETET"
 
 #endif
