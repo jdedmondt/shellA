@@ -161,7 +161,7 @@ void print_help(void)
 	
 	size_t end = sizeof(args)/sizeof(args[0]);
 	for (int i = 0; i < end; i++) {
-		printf("\%s: %s\n", args[i].name, args[i].desc);
+		printf("%s: %s\n", args[i].name, args[i].desc);
 	}
 	
 	printf("\nInternal shell commands:\n");
