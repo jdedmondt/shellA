@@ -46,6 +46,7 @@ int execute(char **argv)
 	return 0;
 }
 
+/* shell_cd: change directory with chdir() */
 int shell_cd(char *path)
 {
 	return chdir(path);
@@ -109,6 +110,7 @@ char **split(char *input, const char *delim, int *size)
 	return output;
 }
 
+/* get_input: read a line from the terminal, return pointer to input */
 char *get_input(void)
 {
 	char *input = NULL;
@@ -125,6 +127,7 @@ char *get_input(void)
 	}
 }
 
+/* extract_dir_name: given a full directory path, extract the name of the directory */
 char *extract_dir_name(char *full_path)
 {
 	char **split_path = split(full_path, "/", NULL);
@@ -141,6 +144,7 @@ char *extract_dir_name(char *full_path)
 	
 }	
 
+/* print_ps1: print prompt statement 1 */
 void print_ps1(void)
 {
 	char cwd[PATH_LEN];
@@ -155,7 +159,8 @@ void print_ps1(void)
 	free(dir_name);
 }
 
-void print_help(void)
+/* print_usage: print command line arguments, internal commands */
+void print_usage(void)
 {
 	printf("Command line arguments:\n");
 	
@@ -168,6 +173,7 @@ void print_help(void)
 	/* TODO */
 }
 
+/* process_cmdl_args: ditto */
 int process_cmdl_args(char **argv)
 {
 	size_t end = sizeof(args)/sizeof(args[0]);
@@ -176,7 +182,7 @@ int process_cmdl_args(char **argv)
 			if (!strcmp(argv[i], args[j].name)) {
 				switch (j) {
 				case 0:
-					print_help();
+					print_usage();
 					die(NULL, 0);
 				default:
 					die("invalid arguement", 0);

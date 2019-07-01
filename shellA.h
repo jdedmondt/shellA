@@ -24,7 +24,7 @@ char *extract_dir_name(char *full_path);
 
 /* output */
 void print_ps1(void);
-void print_help(void);
+void print_usage(void);
 
 
 /*** structs ***/
