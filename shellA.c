@@ -170,7 +170,10 @@ void print_usage(void)
 	}
 	
 	printf("\nInternal shell commands:\n");
-	/* TODO */
+	end = sizeof(commands)/sizeof(commands[0]);
+	for (int i = 0; i < end; i++) {
+		printf("%s: %s\n", commands[i].name, commands[i].desc);
+	}
 }
 
 /* process_cmdl_args: ditto */
