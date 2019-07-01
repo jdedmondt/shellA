@@ -32,20 +32,21 @@ void print_usage(void);
 struct command {
 	int iden;
 	const char *name;
+	const char *name_alt;
 	const char *desc;
 };
 
 /*** command line arguements ***/
 
 struct command args[] = {
-	{0, "--help", "display help message"},
+	{0, "--help", "-h", "display help message"},
 };
 
 /*** internal commands ***/
 
 struct command commands[] = {
-	{0, "exit", "terminate the shell"},
-	{1, "cd", "change directory"},
+	{0, "exit", NULL, "terminate the shell"},
+	{1, "cd", NULL, "change directory"},
 };
 
 #endif

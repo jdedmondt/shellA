@@ -179,7 +179,7 @@ int process_cmdl_args(char **argv)
 	size_t end = sizeof(args)/sizeof(args[0]);
 	for (int i = 1; argv[i]; i++)
 		for (int j = 0; j < end; j++) {
-			if (!strcmp(argv[i], args[j].name)) {
+			if (!strcmp(argv[i], args[j].name) || !strcmp(argv[i], args[j].name_alt)) {
 				switch (j) {
 				case 0:
 					print_usage();
